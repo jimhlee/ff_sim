@@ -1,0 +1,34 @@
+,category,min,max,ref_func,ref_args
+0,Passing TDs,0,20,per,6|1
+1,Passing Yards,-50,999,per,.04|1
+2,Pass Interceptions Thrown,0,20,per,-2|1
+3,Passing 2 Pointers,0,20,per,2|1
+4,Rushing TDs,0,20,per,6|1
+5,Rushing Yards,-50,999,per,.1|1
+6,Rushing 2 Pointers,0,20,per,2|1
+7,Receiving TDs,0,20,per,6|1
+8,Receptions,0,99,per,1|1
+9,Receiving 2 Pointers,0,20,per,2|1
+10,Punt Return TDs,0,20,per,6|1
+11,Punt Return Yards,-50,999,per,.05|1
+12,Kickoff Return TDs,0,20,per,6|1
+13,Kickoff Return Yards,-50,999,per,.05|1
+14,Fumbles Lost (to Opponent),0,20,per,-2|1
+15,Defensive Fumble Recovery TDs,0,10,per,6|1
+16,Fumble Recoveries (from Opponent),0,20,per,4|1
+17,Offensive Fumble Recovery TDs,0,20,per,6|1
+18,Forced Fumbles,0,20,per,6|1
+19,Interception Return TDs,0,20,per,6|1
+20,Interceptions Caught,0,20,per,6|1
+21,Passes Defensed,0,99,per,2|1
+22,Blocked Field Goal TDs,0,20,per,6|1
+23,Blocked Field Goals,0,20,per,4|1
+24,Missed Field Goal Return TDs,0,20,per,6|1
+25,Blocked Punt TDs,0,20,per,6|1
+26,Blocked Punts,0,20,per,4|1
+27,Blocked Extra Points,0,20,per,4|1
+28,Tackles,0,99,per,3|1
+29,Assists,0,99,per,1.5|1
+30,Sacked a QB,0,25,per,3|.5
+31,Tackles for a Loss,0,25,per,2|1
+32,Safeties,0,20,per,6|1

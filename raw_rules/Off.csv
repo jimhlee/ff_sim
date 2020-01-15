@@ -1,0 +1,28 @@
+,category,min,max,ref_func,ref_args
+0,Length of Passing TD,0,9,const,2
+1,Length of Passing TD,10,39,const,4
+2,Length of Passing TD,40,59,const,6
+3,Length of Passing TD,60,110,const,8
+4,Passing Yards,-50,999,per,.03|1
+5,Pass Completions,0,99,per,.1|1
+6,Pass Incompletions,0,99,per,-.2|1
+7,Pass Interceptions Thrown,0,10,per,-4|1
+8,QB Sacked Yardage,0,100,per,-.2|1
+9,Passing 2 Pointers,0,10,per,2|1
+10,Length of Rushing TD,0,9,const,2
+11,Length of Rushing TD,10,29,const,4
+12,Length of Rushing TD,30,49,const,6
+13,Length of Rushing TD,50,110,const,8
+14,Rushing Yards,-50,999,per,.03|1
+15,Rushing 2 Pointers,0,10,per,2|1
+16,Fumbles on Offense,0,10,per,-1|1
+17,Fumbles Lost on Offense,0,10,per,-3|1
+18,Length of Offensive Fumble Recovery TD,0,9,const,2
+19,Length of Offensive Fumble Recovery TD,10,29,const,4
+20,Length of Offensive Fumble Recovery TD,30,49,const,6
+21,Length of Offensive Fumble Recovery TD,50,110,const,8
+22,First Downs,1,50,per,.15|1
+23,Third Down Conversions,1,50,per,.5|1
+24,Third Downs Failed,1,50,per,-.5|1
+25,Fourth Down Conversions,1,50,per,1|1
+26,Fourth Downs Failed,1,50,per,-1|1

@@ -1,0 +1,146 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import numpy as np
+import json
+import os
+import itertools
+
+
+MASTER_URL = 'https://www67.myfantasyleague.com/2019/detailed?{}&W={}&YEAR=2019'
+
+def get_full_player_list():
+    r = requests.get('https://www67.myfantasyleague.com/2019/player_search?L=57573&NAME=+')
+    soup = BeautifulSoup(r.text, 'html.parser')
+
+    raw_list = soup.find_all('table')
+    player_list = raw_list[1].find_all('tr')
+
+    links = {}
+    counter = 0
+    for player in player_list[1:]:
+        if counter > 25:
+            break
+        url = player.a.get('href')
+        l_and_p = url.split('?')[1]
+        links[player.a.text] = l_and_p
+        counter += 1
+    return links
+
+# spaces after commas, no spaces after =
+def master_pull(info, batch_size=10):
+    for batch in make_batches:
+        do_something_with_batch(batch)
+
+
+def do_something_with_batch(batch):
+    #the batches need to be added to a dictionary that includes the weekly results
+    #basically we need to remake the other butts
+
+    all_player_dict = {}
+    for player_name, l_and_p in batch:
+        
+        player_data = {}
+        for week in range(1:18)
+            weekly_url = fill MASTER_URL with l_and_p, week
+            weekly_raw_data = get data for url(request/bs4)
+            
+            weekly_events = []
+            for event in weekly_raw_data:
+                week_thing = isolate event.text
+                weekly_events.append(week_thing)
+                
+            player_data[week] = weekly_events
+        all_player_dict[player_name] = player_data
+    return all_player_dict
+
+******so the endstuff should like this:
+{
+    player1: <--- This comes from the links dict via the full_info variable
+    {
+    1:[events] <--- These come from the do_something_with_batch function
+    2:[events]
+        }
+    player2:
+    {
+    1:[events]
+    2:[events]
+        }
+    }
+
+
+def chunked(it, size):
+    it = iter(it)
+    while True:
+        p = tuple(itertools.islice(it, size))
+        if not p:
+            break
+        yield p
+
+def chunk_stuff():
+    
+
+if __name__ == "__main__":
+    full_info = get_full_player_list()
+    master_pull(full_info)
+
+    # butts = {}
+    # # below is an argument unpacking
+    # for player_name, l_and_p in full_info.items():
+    #     player_results = {}
+    #     for week in range(1,18):
+    #         print(week)
+    #         if week > 2:
+    #             break
+    #         week_url = MASTER_URL.format(l_and_p, week)
+    #         r = requests.get(week_url)
+    #         soup = BeautifulSoup(r.text, 'html.parser')
+    #         events = []
+    #         raw_events = soup.find_all('td', class_ = 'reallysmall')
+
+    #         for raw_event in raw_events:
+    #         # raw_events[1].findChildren('td')[1].text
+    #             if raw_event.text == 'Subtotal' or len(raw_event.get('class')) > 1:
+    #                 continue
+    #             event = raw_event.text
+    #             events.append(event)
+
+    #         player_results[week] = events
+    #     butts[player_name] = player_results
+    
+
+
+
+
+    # with open('/Users/jimhlee23/learnpython/fantasy_football/full_player_list.json', 'w') as f:
+    #     json.dump(links,f)
+
+# def get_player_data(url):
+# r = requests.get(url)
+# soup = BeautifulSoup(r.text, 'html.parser')
+# raw_list = soup.find_all('table')
+# blood = raw_list[1].find_all('a')
+# starts from the 5th element in blood
+
+# output = {}
+# counter = 1
+
+# blah = soup.find_all('td', class_='points')
+
+# for row in blah:
+#     if row.a is None or len(row.get('class')) > 1:
+#         continue
+#     output[counter] = row.a.get('href')
+#     counter += 1
+    # points_list = raw_list[2].find_all('td') 
+
+# TODO: make the weekly scoring info available
+
+# <td class="points"><a href="https://www67.myfantasyleague.com/2019/detailed?L=57573&amp;P=0630&amp;W=1&amp;YEAR=2019">9.13</a></td><td>at Buccaneers</td>
+
+
+
+'''
+V proper syntax for finding this particular kind of shit, tag then
+soup.find_all('tr', class_ = 'oddtablerow')
+'''
