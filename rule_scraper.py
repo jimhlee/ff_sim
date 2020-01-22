@@ -39,8 +39,6 @@ for table in raw_list[1:-1]:
     df = pd.DataFrame(raw_data, columns=['category','min','max','ref_func','ref_args'])
     df.to_csv(f'/Users/jimhlee23/learnpython/fantasy_football/raw_rules/{set_name}.csv')
 
-
-
 # list(list(list(blah.children)[0].children)[0].children)
 # THAT IS THE CAPTION FOR RULES FOR ST
 

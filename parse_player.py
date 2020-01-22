@@ -17,7 +17,7 @@ def parser():
             with open(PLAYER_DIRECTORY + weekly_folder + '/' + batch, 'r') as f:
                 raw_batch = json.load(f)
             for player_name, events in raw_batch.items():
-                parsed_week = {}
+                parsed_week = []
                 position_name = player_name.split(' ')[-1]    
                 for event in events:
                     if event == 'Bye Week':
@@ -28,7 +28,7 @@ def parser():
                     except:
                         val = 0
                     rule = ' '.join(stupid_list[1:-1])
-                    parsed_week[rule] = val
+                    parsed_week.append((rule, val))
                 if position_name not in positions_dict:
                     positions_dict[position_name] = {}
                 if player_name not in positions_dict[position_name]:
